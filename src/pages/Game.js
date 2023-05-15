@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import styles from '../styles/Game.module.scss';
 import Typewriter from '../components/Typewriter';
-
+import axios from 'axios';
 import storyExcerpts from '../data/story';
-
+import {NavLink} from 'react-router-dom';
 const Game = () => {
   const [currentExcerpt, setCurrExcerpt] = useState(0);
   const [currentScene, setCurrScene] = useState(0);
   const [bgImgUrl, setBgImgUrl] = useState('');
   const [ans, setAns] = useState('');
+  const [loggedIn, setLoggedIn] = useState(false);
 
   const handleSceneChange = () => {
     if (currentScene < storyExcerpts[currentExcerpt].scenes.length - 1) {
@@ -22,6 +23,48 @@ const Game = () => {
     }
   }, [currentScene])
 
+  
+  useEffect(() => {
+    const checkLoginStatus = async () => {
+      try {
+        const token = localStorage.getItem("token");
+        if (token) {
+          // Send a request to the backend to validate the token
+          const response = await axios.get("http://localhost:5000/checkLogged", {
+            headers: { Authorization: `Bearer ${token}` },
+          });
+
+          // If the response is successful, the user is logged in
+          if (response.status === 200) {
+            setLoggedIn(true);
+          }
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    checkLoginStatus();
+  }, []);
+
+
+  function logout() {
+    axios.post('http://localhost:5000/logout')
+      .then(() => {
+        // Clear the token from local storage
+        localStorage.removeItem('token');
+  
+        // Redirect the user to the homepage or a login page
+        // For example, you can use React Router to navigate to the homepage
+        // history.push('/');
+        console.log('Logout successful');
+        setLoggedIn(false);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('nextScene');
@@ -30,7 +73,10 @@ const Game = () => {
   }
 
   return (
-    <div className={styles.back} style={{backgroundImage: `url(${bgImgUrl})`}}>
+    <div>
+      {loggedIn ? (
+        <div>
+        <div className={styles.back} style={{backgroundImage: `url(${bgImgUrl})`}}>
       <div className={styles.backdropBlur}>
         <div className={styles.game} style={{ backgroundImage: `url(${bgImgUrl})` }}>
           <header className='page-header'>
@@ -54,6 +100,16 @@ const Game = () => {
         </div>
       </div>
     </div>
+        <button onClick={logout}>Logout</button>
+        </div>
+      ) : (
+        <div>
+          <h2>Please log in to access the game</h2>
+          <NavLink to="/login">Login</NavLink>
+        </div>
+      )}
+    </div>
+    
   )
 }
 

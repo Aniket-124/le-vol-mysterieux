@@ -1,4 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Dashboard from './pages/Dashboard';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
 import './App.css';
 import Layout from './layouts/Layout';
 
@@ -9,7 +12,7 @@ function App() {
     <BrowserRouter>
       <Layout>
         <Routes>
-          <Route path='/' element={(
+          <Route path='/game' element={(
             <Game/>
           )} />
           <Route path='*' element={(
@@ -17,6 +20,9 @@ function App() {
               <h1>404 - Not found</h1>
             </div>
           )} />
+          <Route path="/" element={<Dashboard/>}/>
+        <Route path="/login" element={<Login/>}></Route>
+        <Route path="/signup" element={<Signup/>}></Route>
         </Routes>
       </Layout>
     </BrowserRouter> 
