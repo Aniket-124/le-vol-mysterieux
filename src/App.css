@@ -36,3 +36,84 @@
     transform: rotate(360deg);
   }
 }
+
+.promptBox 
+{
+  background: linear-gradient(45deg, #fff, #f0f0f0, #fff);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap:50px;
+  align-items: center;
+  justify-content: center;
+  padding:30px; 
+  
+
+}
+.submitPrompt 
+{
+  display: flex;
+  gap:15px;
+}
+ 
+input 
+{
+  padding:5px;
+  width: 20px;
+  text-transform: uppercase;
+  background-color: transparent;
+  font-size: 30px;
+  border:none;
+  border-bottom: 2px solid black;
+
+}
+
+input:focus {
+  outline: none; /* Remove default focus outline */
+  /* Additional styles if needed */
+}
+
+.btn 
+{
+  background-color: red;
+  color:white;
+  font-size: large;
+  padding:5px;
+  width: 100px;
+  border:none;
+  border-radius: 10px;
+  
+}
+
+.button-animation {
+  position: relative;
+  overflow: hidden;
+}
+
+.button-animation::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 120%;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.button-animation:hover::before {
+  opacity: 1;
+}
+
+.button-animation:active::before {
+  width: 150%;
+  height: 150%;
+  opacity: 0;
+  transition: opacity 0.1s ease, width 0.3s ease-out, height 0.3s ease-out;
+}
+
+ 
