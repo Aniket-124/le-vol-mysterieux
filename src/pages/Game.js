@@ -83,7 +83,7 @@ const Game = () => {
             <h1 className='heading'>The Mysterious Heist</h1>
           </header>
           <main>
-            <div className='story'>
+            <div className={styles.story}>
               {storyExcerpts[currentExcerpt] ? (<>
                 <Typewriter gotoNext={handleSceneChange} text={storyExcerpts[currentExcerpt].scenes[currentScene].text } />
                 {storyExcerpts[currentExcerpt].scenes[currentScene].form !== undefined && 
