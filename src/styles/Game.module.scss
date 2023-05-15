@@ -1,0 +1,18 @@
+.back {
+    background-image: url(../media/story-scenes/scene1.jpeg);
+    background-size: cover;
+    height: 100vh;
+}
+
+.backdropBlur {
+    backdrop-filter: blur(16px);
+    height: inherit;
+}
+
+.game {background-image: linear-gradient(rgba(0, 0, 0, .4), transparent), url(../media/story-scenes/scene1.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: inherit;
+    width: 1000px;
+    margin: auto;
+}
