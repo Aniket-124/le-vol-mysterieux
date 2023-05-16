@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { NavLink } from 'react-router-dom';
+import styles from '../styles/Login.module.scss'
 
 function Login() {
   const [username, setUsername] = useState('');
@@ -32,7 +33,7 @@ function Login() {
   };
 
   return (
-    <div>
+    <div className={styles.login}>
       <h2>Login</h2>
       <form onSubmit={handleLogin}>
         <div>
@@ -40,6 +41,7 @@ function Login() {
           <input
             type="text"
             value={username}
+            className={styles.inputText}
             onChange={(e) => setUsername(e.target.value)}
           />
         </div>
@@ -48,10 +50,11 @@ function Login() {
           <input
             type="password"
             value={password}
+            className={styles.inputText}
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button type="submit">Login</button>  
+        <button className={styles.submit} type="submit">Login</button>  
         <NavLink to ="/signup">if not signup</NavLink>
       </form>
     </div>

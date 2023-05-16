@@ -1,0 +1,42 @@
+.Dashboard 
+{
+    background-image: url(../media/story-scenes/home.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 130vh;
+    color:white;
+    font-size: large;
+    text-align: center;
+    font-family: monospace;
+}
+
+.logoutBtn 
+{
+    margin-top:200px;
+    font-size: large;
+    padding:10px;
+    border-radius: 6px;
+
+}
+
+.logoutBtn:hover::before {
+    opacity: 1;
+  }
+  
+  .logoutBtn:active::before {
+    width: 150%;
+    height: 150%;
+    opacity: 0;
+    transition: opacity 0.1s ease, width 0.3s ease-out, height 0.3s ease-out;
+  }
+
+.logIn 
+{
+    margin-top:200px;
+    font-size: large;
+    color:black;
+    padding:10px;
+    width: fit-content;
+    border-radius: 6px;
+}
+

@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import styles from '../styles/Dashboard.module.scss';
+
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 function Dashboard() {
@@ -48,14 +50,19 @@ function Dashboard() {
   return (
     <div>
       {loggedIn ? (
-        <div>
+        <div className= {styles.Dashboard}>
         <h2>Welcome to the Dashboard</h2>
-        <button onClick={logout}>Logout</button>
+        <div>
+        <button className={styles.logoutBtn} onClick={logout}>Logout</button>
+        </div>
         </div>
       ) : (
-        <div>
-          <h2>Please log in to access the Dashboard</h2>
+        <div className={styles.Dashboard}>
+
+          <h2>Please log in to Play the Game</h2>
+          <button className={styles.logIn}>
           <NavLink to="/login">Login</NavLink>
+          </button>
         </div>
       )}
     </div>
