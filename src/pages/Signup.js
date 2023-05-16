@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import styles from '../styles/Login.module.scss'
 // import {NavLink} from 'react-router-dom';
 function Signup() {
   const [username, setUsername] = useState('');
@@ -27,7 +28,7 @@ function Signup() {
   };
 
   return (
-    <div>
+    <div className={styles.login}>
       <h2>Signup</h2>
       <form onSubmit={handleSignup}>
         <div>
@@ -35,6 +36,7 @@ function Signup() {
           <input
             type="text"
             value={username}
+            className={styles.inputText}
             name='email'
             onChange={(e) => setUsername(e.target.value)}
           />
@@ -44,11 +46,12 @@ function Signup() {
           <input
             type="password"
             value={password}
+            className={styles.inputText}
             name='password'
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button type="submit">Signup</button>
+        <button type="submit" className={styles.submit}>Signup</button>
       </form>
     </div>
   );

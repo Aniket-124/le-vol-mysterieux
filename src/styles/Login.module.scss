@@ -1,0 +1,52 @@
+.login 
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:20px;
+    align-items: center;
+    height: 50vh;
+
+    form 
+    {
+        display:flex;
+        font-size: large;
+        flex-direction: column;
+        gap:30px;
+    }
+    .inputText
+    {
+        border: none;
+        padding:7px;
+        font-size: large;
+        border-bottom: 2px solid gray;;
+        width: 200px;
+    }
+
+    .inputText ::before 
+    {
+        border-bottom: 2px solid gray;;
+    }
+
+    .inputText ::after 
+    {
+        border-bottom: 2px solid #6666E5;
+
+    }
+
+    .inputText:focus {
+        outline: none; /* Remove default focus outline */
+        /* Additional styles if needed */
+        border-bottom: 2px solid #6666E5;
+
+      }
+
+    .submit 
+    {
+        padding: 5px;
+        font-weight: 500;
+        color:white;
+        border:none;
+        background-color: rgb(102, 102, 229);;
+    }
+}
