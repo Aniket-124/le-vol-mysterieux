@@ -114,7 +114,7 @@ const Game = () => {
                 <h1 className='heading'>The Mysterious Heist</h1>
               </header>
               <main className={styles.main}>
-                {true ? (
+                {loggedIn ? (
                   attempts ? (
                     <div className={styles.story}>
                       {storyExcerpts[currentExcerpt] ? (<>
