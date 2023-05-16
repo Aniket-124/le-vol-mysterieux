@@ -1,7 +1,10 @@
 .typewriter {
     color: white;
-    background-color: #0005;
+    background-color: #000c;
     padding: 1.2rem;
     border-radius: 0.5rem;
-    border: solid 2px #333;
+    border: solid 2px #111;
+    backdrop-filter: blur(4px);
+    font-size: 1.2rem;
+    font-family: monospace;
 }

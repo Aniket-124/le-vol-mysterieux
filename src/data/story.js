@@ -22,12 +22,12 @@ const storyExcerpts = [
       {
         bg: '/media/scenes/scene4.jpeg',
         text: `TODO: Riddle`,
-        form: [
-          { element: 'input', type: 'text', name: 'ans', required: true, placeholder: 'Guess the word' },
-          { element: 'btn', type: 'submit', required: true, placeholder: 'Submit' },
-        ]
       },
-    ]
+    ],
+    form: {
+      input: { type: 'text', name: 'ans', required: true, placeholder: 'Guess the word', ansLen: 11 },
+      button: { type: 'submit', required: true, placeholder: 'Submit' },
+    }
   },
   {
     excerpt: `With the safe room code in hand, you descend into the depths of the mansion, following a hidden passage. 
@@ -51,13 +51,48 @@ const storyExcerpts = [
       {
         bg: '/media/scenes/scene8.jpeg',
         text: `Decipher it to reveal the location of this secret lair.`,
-        form: [
-          { element: 'input', type: 'text', name: 'ans', required: true, placeholder: 'Guess the word' },
-          { element: 'btn', type: 'submit', required: true, placeholder: 'Submit' },
-        ]
       },
-    ]
+    ],
+    form: {
+      input: { type: 'text', name: 'ans', required: true, placeholder: 'Can you decipher?', ansLen: 6 },
+      button: { type: 'submit', required: true, placeholder: 'Submit' },
+    }
   },
+  {
+    excerpt: `While investigating the underground hideout, you come across a flight-ticket lying on the floor left by the criminal. With this information you may know where to find him`,
+    scenes: [
+      {
+        bg: '/media/scenes/scene9.jpeg',
+        text: 'While investigating the underground hideout, you come across a flight-ticket lying on the floor left by the criminal.',
+      },
+      {
+        bg: '/media/scenes/scene10.jpeg',
+        text: 'With this information you may know where to find him',
+      },
+    ],
+    form: {
+      input: { type: 'text', name: 'ans', required: true, placeholder: 'Where should you go now?', ansLen: 7 },
+      button: { type: 'submit', required: true, placeholder: 'Submit' },
+    }
+  },
+  {
+    excerpt: ``,
+    scenes: [
+      {
+        bg: '/media/scenes/scene13.jpeg',
+        text: 'While investigating the underground hideout, you come across a flight-ticket lying on the floor left by the criminal.',
+      },
+      {
+        bg: '/media/scenes/scene14.jpeg',
+        text: 'With this information you may know where to find him',
+      },
+    ],
+    form: {
+      input: { type: 'text', name: 'ans', required: true, placeholder: 'Where should you go now?', ansLen: 11 },
+      button: { type: 'submit', required: true, placeholder: 'Submit' },
+    }
+  },
+
 ]
 
 

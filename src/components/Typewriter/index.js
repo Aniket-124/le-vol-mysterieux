@@ -6,11 +6,16 @@ const Typewriter = ({ text='', gotoNext=null }) => {
 
   useEffect(() => {
     let currentIndex = 0;
+    let nextTimer;
     const typingInterval = setInterval(() => {
       if (currentIndex >= text.length) {
         clearInterval(typingInterval);
 
-        if (gotoNext !== null) gotoNext();
+        if (gotoNext !== null) {
+          nextTimer = setTimeout(() => {
+            gotoNext()
+          }, 2000);
+        };
         return;
       }
 
@@ -19,6 +24,7 @@ const Typewriter = ({ text='', gotoNext=null }) => {
     }, 50); // Adjust the interval duration to control the typing speed
 
     return () => {
+      if (nextTimer) clearTimeout(nextTimer);
       clearInterval(typingInterval);
     };
   }, [text]);

@@ -3,12 +3,12 @@ import styles from '../styles/Game.module.scss';
 import Typewriter from '../components/Typewriter';
 
 import storyExcerpts from '../data/story';
+import Prompt from '../components/Prompt';
 
 const Game = () => {
   const [currentExcerpt, setCurrExcerpt] = useState(0);
   const [currentScene, setCurrScene] = useState(0);
   const [bgImgUrl, setBgImgUrl] = useState('');
-  const [ans, setAns] = useState('');
 
   const handleSceneChange = () => {
     if (currentScene < storyExcerpts[currentExcerpt].scenes.length - 1) {
@@ -22,9 +22,8 @@ const Game = () => {
     }
   }, [currentScene])
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('nextScene');
+  const handleSubmit = (val) => {
+    console.log(val);
     setCurrScene(0);
     setCurrExcerpt(prev => prev + 1);
   }
@@ -36,15 +35,15 @@ const Game = () => {
           <header className='page-header'>
             <h1 className='heading'>The Mysterious Heist</h1>
           </header>
-          <main>
+          <main className={styles.main}>
             <div className={styles.story}>
               {storyExcerpts[currentExcerpt] ? (<>
                 <Typewriter gotoNext={handleSceneChange} text={storyExcerpts[currentExcerpt].scenes[currentScene].text } />
-                {storyExcerpts[currentExcerpt].scenes[currentScene].form !== undefined && 
-                  <form autoComplete="off" id='ansForm' onSubmit={handleSubmit}>
-                    <input type='text' value={ans} onChange={e => {setAns(e.target.value)}} required placeholder='Guess the word' />
-                    <button type='submit'>Submit</button>
-                  </form>
+                {currentScene >= storyExcerpts[currentExcerpt].scenes.length - 1 && 
+                  <Prompt
+                    maxLength={storyExcerpts[currentExcerpt].form.input.ansLen} 
+                    placeholder={storyExcerpts[currentExcerpt].form.input.placeholder} 
+                    handleSubmit={handleSubmit} />
                 }
               </>) : (
                 <p>Story completed</p>
