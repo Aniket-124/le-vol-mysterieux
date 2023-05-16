@@ -12,7 +12,7 @@
     --bg: rgba(240, 240, 240, 0.6);
     --color: #444;
     position: fixed;
-    top: var(--nav-height);
+    top: calc(var(--nav-height) + 0.8rem);
     right: 0;
     min-width: 300px;
     max-width: calc(100% - 3.2rem);
