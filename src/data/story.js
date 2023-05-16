@@ -82,15 +82,15 @@ const storyExcerpts = [
     scenes: [
       {
         bg: '/media/scenes/scene11.jpeg',
-        text: 'Unveiling the criminal mastermind behind the heist becomes your mission. Whispers guide you to an infamous, mysterious name.',
+        text: 'That previous clue appeared significant but it was a deliberate attempt to divert your attention. Unveiling the criminal mastermind behind the heist becomes your mission.',
       },
       {
         bg: '/media/scenes/scene12.jpeg',
-        text: 'Guess the hidden word to confirm their identity. Stay vigilant, uncover truth, and justice prevails.',
+        text: 'Whispers guide you to an infamous, mysterious name. Guess the hidden word to confirm their identity. Stay vigilant, uncover truth, and justice prevails.',
       },
       {
         bg: '/media/scenes/scene13.jpeg',
-        text: 'Decrypt secrets in cryptic messages, follow shadowy trails, expose the orchestrator.',
+        text: 'Decrypt secrets in cryptic messages, follow Shadowy trails, expose the orchestrator.',
       },
     ],
     form: {
@@ -105,7 +105,7 @@ const failure = {
   excerpt: `As the detective followed the twists and turns of the investigation, a sinking feeling started to settle in their gut. Every lead turned cold, every clue led to dead ends. The elusive thief slipped through their fingers like smoke, leaving behind only a sense of frustration and defeat. With a heavy heart, the detective realized that this time, the thief had managed to outwit them. The criminal vanished into the night, leaving behind a void that seemed impossible to fill. The streets whispered tales of the mastermind's escape, a testament to their cunning and audacity.The detective, left with unanswered questions and a bitter taste of failure, vowed to continue the pursuit, knowing that their encounter with this formidable adversary was far from over.`,
   scenes: [
     {
-      bg: '/media/scenes/scene11.jpeg',
+      bg: '/media/scenes/faulure.jpeg',
       text: `As the detective followed the twists and turns of the investigation, a sinking feeling started to settle in their gut. Every lead turned cold, every clue led to dead ends. The elusive thief slipped through their fingers like smoke, leaving behind only a sense of frustration and defeat. With a heavy heart, the detective realized that this time, the thief had managed to outwit them. The criminal vanished into the night, leaving behind a void that seemed impossible to fill. The streets whispered tales of the mastermind's escape, a testament to their cunning and audacity.The detective, left with unanswered questions and a bitter taste of failure, vowed to continue the pursuit, knowing that their encounter with this formidable adversary was far from over.`,
     },
   ],
@@ -118,7 +118,7 @@ const success = {
   excerpt: `With each clue deciphered, you piece together the puzzle, unravel the mystery, and expose the criminal mastermind. The stolen treasures are recovered, and the city breathes a sigh of relief. Your exceptional detective skills and unwavering determination have once again prevailed, ensuring that justice is served.`,
   scenes: [
     {
-      bg: '/media/scenes/scene11.jpeg',
+      bg: '/media/scenes/success.jpeg',
       text: `With each clue deciphered, you piece together the puzzle, unravel the mystery, and expose the criminal mastermind. The stolen treasures are recovered, and the city breathes a sigh of relief. Your exceptional detective skills and unwavering determination have once again prevailed, ensuring that justice is served.`,
     },
   ],
