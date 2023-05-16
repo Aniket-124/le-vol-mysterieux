@@ -17,6 +17,9 @@ My goal in creating this project was to implement pre requisitic task given by e
 
 purpose of this project is to make a treasure hunt game for the Elitmus organization for the internship 
 
+## Video Demo 
+[mystry.webm](https://github.com/Aniket-124/le-vol-mysterieux/assets/122202971/424590eb-1d32-4dcd-bf4b-812cf2760e61)
+
 ## Abstract (Story Our Game)
 **Excerpt 1:** The Safe Room
 You arrive at the opulent mansion of the esteemed art collector, Mr. Beaumont. As you step inside, you notice the remnants of a shattered display case—the theft has undoubtedly taken place. While examining the scene, you overhear one of the house staff murmuring about a secret safe room where the most valuable treasures were stored. You must uncover the hidden word, the entry code to the safe room, and discover what lies within.
