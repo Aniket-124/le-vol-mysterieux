@@ -16,6 +16,17 @@ const Game = () => {
   const [alertMsg, setAlertMsg] = useState('');
   const [alertSeverity, setAlertSeverity] = useState('info');
 
+  useEffect(() => {
+    if (alertMsg) {
+      var timeout = setTimeout(() => {
+        setAlertMsg('');
+      }, 6000);
+    }
+    return (() => {
+      clearTimeout(timeout);
+    })
+  }, [alertMsg])
+
   const handleSceneChange = () => {
     if (currentScene < storyExcerpts[currentExcerpt].scenes.length - 1) {
       setCurrScene((prev) => prev + 1);
@@ -23,8 +34,16 @@ const Game = () => {
   }
 
   useEffect(() => {
+    if (attempts <= 0) {
+      setBgImgUrl('/media/scenes/failure.jpeg')
+    }
+  }, [attempts])
+
+  useEffect(() => {
     if (storyExcerpts[currentExcerpt]) {
       setBgImgUrl(storyExcerpts[currentExcerpt].scenes[currentScene].bg)
+    } else if (currentExcerpt >= storyExcerpts.length) {
+      setBgImgUrl('/media/scenes/success.jpeg')
     }
   }, [currentScene])
 
