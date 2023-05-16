@@ -30,10 +30,6 @@
     justify-content: flex-end;
 }
 
-.story {
-    margin-bottom: 4rem;
-}
-
 .ansform {
     margin-top: 3rem;
 }
@@ -47,5 +43,14 @@
     h2 {
         margin-bottom: 1.6rem;
     }
+}
 
+.tryAgain {
+    display: block;
+    max-width: fit-content;
+    padding: 0.4rem 0.8rem;
+    margin: 1rem auto 0;
+    background-color: #ddd;
+    border-radius: 0.25rem;
+    text-decoration: none;
 }

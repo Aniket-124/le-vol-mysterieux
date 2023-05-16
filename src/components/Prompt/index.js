@@ -3,8 +3,11 @@ import styles from './Prompt.module.scss';
 import cx from 'classnames';
 
 
-const CharacterInput = ({ maxLength, handleSubmit, placeholder = 'Enter your answer' }) => {
-  const [inputValues, setInputValues] = useState(Array(maxLength).fill(''));
+const CharacterInput = ({ val=[], handleSubmit, placeholder = 'Enter your answer' }) => {
+  const [inputValues, setInputValues] = useState(Array.from(val).map(v => {
+    if (v === '_') return ''
+    else return v
+  }));
 
   const handleChange = (index, value) => {
     const newInputValues = [...inputValues];
@@ -12,7 +15,7 @@ const CharacterInput = ({ maxLength, handleSubmit, placeholder = 'Enter your ans
     setInputValues(newInputValues);
 
     // Move focus to the next input field
-    if (value !== '' && index < maxLength - 1) {
+    if (value !== '' && index < val.length - 1) {
       const nextInput = document.getElementById(`input-${index + 1}`);
       nextInput.focus();
     }
@@ -36,6 +39,7 @@ const CharacterInput = ({ maxLength, handleSubmit, placeholder = 'Enter your ans
             id={`input-${index}`}
             type="text"
             maxLength="1"
+            disabled={val[index] !== '_'}
             value={value}
             required
             onChange={(event) => handleChange(index, event.target.value)}

@@ -15,19 +15,18 @@ const storyExcerpts = [
       },
       {
         bg: '/media/scenes/scene3.jpeg',
-        text: `While examining the scene, you overhear one of the house staff murmuring about a secret safe room where the most valuable treasures were stored.
-        
-        You must uncover the hidden word, the entry code to the safe room, and discover what lies within.`,
+        text: `While examining the scene, you overhear one of the house staff murmuring about a secret safe room where the most valuable treasures were stored.`,
       },
       {
         bg: '/media/scenes/scene4.jpeg',
-        text: `TODO: Riddle`,
+        text: `You must uncover the hidden word, the entry code to the safe room, and discover what lies within.`,
       },
     ],
     form: {
-      input: { type: 'text', name: 'ans', required: true, placeholder: 'Guess the word', ansLen: 11 },
+      input: { type: 'text', name: 'ans', required: true, placeholder: 'Guess the word', hint: 'M__T_RM__D' },
       button: { type: 'submit', required: true, placeholder: 'Submit' },
-    }
+    },
+    ans: 'MASTERMIND'
   },
   {
     excerpt: `With the safe room code in hand, you descend into the depths of the mansion, following a hidden passage. 
@@ -54,9 +53,10 @@ const storyExcerpts = [
       },
     ],
     form: {
-      input: { type: 'text', name: 'ans', required: true, placeholder: 'Can you decipher?', ansLen: 6 },
+      input: { type: 'text', name: 'ans', required: true, placeholder: 'Can you decipher?', hint: 'L____N' },
       button: { type: 'submit', required: true, placeholder: 'Submit' },
-    }
+    },
+    ans: 'LONDON'
   },
   {
     excerpt: `While investigating the underground hideout, you come across a flight-ticket lying on the floor left by the criminal. With this information you may know where to find him`,
@@ -71,29 +71,58 @@ const storyExcerpts = [
       },
     ],
     form: {
-      input: { type: 'text', name: 'ans', required: true, placeholder: 'Where should you go now?', ansLen: 7 },
+      input: { type: 'text', name: 'ans', required: true, placeholder: 'Where should you go now?', hint: '_O_____' },
       button: { type: 'submit', required: true, placeholder: 'Submit' },
-    }
+    },
+    ans: 'NOWHERE',
+    deadend: 'TORONTO'
   },
   {
-    excerpt: ``,
+    excerpt: `Unveiling the criminal mastermind behind the heist becomes your mission. Whispers guide you to an infamous, mysterious name. Guess the hidden word to confirm their identity. Stay vigilant, uncover truth, and justice prevails. As faint presence emerges from the crime scene, connecting enigmatic clues. Decrypt secrets in cryptic messages, follow shadowy trails, expose the orchestrator. `,
     scenes: [
       {
-        bg: '/media/scenes/scene13.jpeg',
-        text: 'While investigating the underground hideout, you come across a flight-ticket lying on the floor left by the criminal.',
+        bg: '/media/scenes/scene11.jpeg',
+        text: 'Unveiling the criminal mastermind behind the heist becomes your mission. Whispers guide you to an infamous, mysterious name.',
       },
       {
-        bg: '/media/scenes/scene14.jpeg',
-        text: 'With this information you may know where to find him',
+        bg: '/media/scenes/scene12.jpeg',
+        text: 'Guess the hidden word to confirm their identity. Stay vigilant, uncover truth, and justice prevails.',
+      },
+      {
+        bg: '/media/scenes/scene13.jpeg',
+        text: 'Decrypt secrets in cryptic messages, follow shadowy trails, expose the orchestrator.',
       },
     ],
     form: {
-      input: { type: 'text', name: 'ans', required: true, placeholder: 'Where should you go now?', ansLen: 11 },
+      input: { type: 'text', name: 'ans', required: true, placeholder: 'Can you guess the theif\'s name?', hint: '_HA_O_' },
       button: { type: 'submit', required: true, placeholder: 'Submit' },
-    }
-  },
-
+    },
+    ans: 'SHADOW'
+  }
 ]
 
+const failure = {
+  excerpt: `As the detective followed the twists and turns of the investigation, a sinking feeling started to settle in their gut. Every lead turned cold, every clue led to dead ends. The elusive thief slipped through their fingers like smoke, leaving behind only a sense of frustration and defeat. With a heavy heart, the detective realized that this time, the thief had managed to outwit them. The criminal vanished into the night, leaving behind a void that seemed impossible to fill. The streets whispered tales of the mastermind's escape, a testament to their cunning and audacity.The detective, left with unanswered questions and a bitter taste of failure, vowed to continue the pursuit, knowing that their encounter with this formidable adversary was far from over.`,
+  scenes: [
+    {
+      bg: '/media/scenes/scene11.jpeg',
+      text: `As the detective followed the twists and turns of the investigation, a sinking feeling started to settle in their gut. Every lead turned cold, every clue led to dead ends. The elusive thief slipped through their fingers like smoke, leaving behind only a sense of frustration and defeat. With a heavy heart, the detective realized that this time, the thief had managed to outwit them. The criminal vanished into the night, leaving behind a void that seemed impossible to fill. The streets whispered tales of the mastermind's escape, a testament to their cunning and audacity.The detective, left with unanswered questions and a bitter taste of failure, vowed to continue the pursuit, knowing that their encounter with this formidable adversary was far from over.`,
+    },
+  ],
+  form: {
+    button: { type: 'submit', required: true, placeholder: 'Submit' },
+  }
+}
 
-export default storyExcerpts;
+const success = {
+  excerpt: `With each clue deciphered, you piece together the puzzle, unravel the mystery, and expose the criminal mastermind. The stolen treasures are recovered, and the city breathes a sigh of relief. Your exceptional detective skills and unwavering determination have once again prevailed, ensuring that justice is served.`,
+  scenes: [
+    {
+      bg: '/media/scenes/scene11.jpeg',
+      text: `With each clue deciphered, you piece together the puzzle, unravel the mystery, and expose the criminal mastermind. The stolen treasures are recovered, and the city breathes a sigh of relief. Your exceptional detective skills and unwavering determination have once again prevailed, ensuring that justice is served.`,
+    },
+  ],
+}
+
+
+export { storyExcerpts, failure, success };

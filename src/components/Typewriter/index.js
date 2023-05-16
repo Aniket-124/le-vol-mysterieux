@@ -21,7 +21,7 @@ const Typewriter = ({ text='', gotoNext=null }) => {
 
       currentIndex++;
       setDisplayText(text.slice(0, currentIndex));
-    }, 50); // Adjust the interval duration to control the typing speed
+    }, 0); // Adjust the interval duration to control the typing speed
 
     return () => {
       if (nextTimer) clearTimeout(nextTimer);
