@@ -114,8 +114,9 @@ const Game = () => {
                 <h1 className='heading'>The Mysterious Heist</h1>
               </header>
               <main className={styles.main}>
-                {loggedIn ? (
-                  attempts ? (
+                {true ? (<>
+                  <button type='button' className={'logout-btn'} onClick={logout}>Logout</button>
+                  {attempts ? (
                     <div className={styles.story}>
                       {storyExcerpts[currentExcerpt] ? (<>
                         <Typewriter gotoNext={handleSceneChange} text={storyExcerpts[currentExcerpt].scenes[currentScene].text} />
@@ -133,8 +134,8 @@ const Game = () => {
                   ) : (<div className={styles.story}>
                     <Typewriter text={failureExcerpt.scenes[0].text} />
                       <a className={styles.tryAgain} href='/game'>Try again</a>
-                  </div>)
-                ) : (
+                  </div>)}
+                </>) : (
                   <div className={styles.login}>
                     <h2>Please log in to access the game</h2>
                     <NavLink to="/login">Login</NavLink>
@@ -144,7 +145,6 @@ const Game = () => {
             </div>
           </div>
         </div>
-        <button onClick={logout}>Logout</button>
       </div>
     </div>
 

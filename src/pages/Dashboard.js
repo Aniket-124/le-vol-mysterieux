@@ -35,7 +35,7 @@ function Dashboard() {
       .then(() => {
         // Clear the token from local storage
         localStorage.removeItem('token');
-  
+
         // Redirect the user to the homepage or a login page
         // For example, you can use React Router to navigate to the homepage
         // history.push('/');
@@ -49,22 +49,26 @@ function Dashboard() {
 
   return (
     <div>
-      {loggedIn ? (
-        <div className= {styles.Dashboard}>
-        <h2>Welcome to the Dashboard</h2>
-        <div>
-        <button className={styles.logoutBtn} onClick={logout}>Logout</button>
-        </div>
-        </div>
-      ) : (
-        <div className={styles.Dashboard}>
-
-          <h2>Please log in to Play the Game</h2>
-          <button className={styles.logIn}>
-          <NavLink to="/login">Login</NavLink>
-          </button>
-        </div>
-      )}
+      <div className={styles.Dashboard}>
+        <header className='page-header'>
+          <h1 className='heading'>The Mysterious Heist</h1>
+        </header>
+        {loggedIn ? (
+          <div className={styles.content}>
+            <h2>Welcome to the Dashboard</h2>
+            <div>
+              <button className={styles.logoutBtn} onClick={logout}>Logout</button>
+            </div>
+          </div>
+        ) : (
+          <div className={styles.content}>
+            <h2>Please log in to Play the Game</h2>
+            <button className={styles.logIn}>
+              <NavLink to="/login">Login</NavLink>
+            </button>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

@@ -34,7 +34,9 @@ function Login() {
 
   return (
     <div className={styles.login}>
-      <h2>Login</h2>
+      <header className='page-header'>
+        <h1 className='heading'>Login</h1>
+      </header>
       <form onSubmit={handleLogin}>
         <div>
           <label>Username:</label>
@@ -55,7 +57,7 @@ function Login() {
           />
         </div>
         <button className={styles.submit} type="submit">Login</button>  
-        <NavLink to ="/signup">if not signup</NavLink>
+        <NavLink to ="/signup">Don't have an account? Signup</NavLink>
       </form>
     </div>
   );

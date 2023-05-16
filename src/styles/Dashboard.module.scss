@@ -1,42 +1,49 @@
-.Dashboard 
-{
-    background-image: url(../media/story-scenes/home.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 130vh;
-    color:white;
-    font-size: large;
-    text-align: center;
-    font-family: monospace;
+.Dashboard {
+  background-image: url(../media/story-scenes/home3.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  color: white;
+  font-size: large;
+  text-align: center;
+  font-family: monospace;
+  display: flex;
+  flex-direction: column;
 }
 
-.logoutBtn 
-{
-    margin-top:200px;
-    font-size: large;
-    padding:10px;
-    border-radius: 6px;
+.logoutBtn {
+  margin-top: 200px;
+  font-size: large;
+  padding: 10px;
+  border-radius: 6px;
 
 }
 
 .logoutBtn:hover::before {
-    opacity: 1;
-  }
-  
-  .logoutBtn:active::before {
-    width: 150%;
-    height: 150%;
-    opacity: 0;
-    transition: opacity 0.1s ease, width 0.3s ease-out, height 0.3s ease-out;
-  }
-
-.logIn 
-{
-    margin-top:200px;
-    font-size: large;
-    color:black;
-    padding:10px;
-    width: fit-content;
-    border-radius: 6px;
+  opacity: 1;
 }
 
+.logoutBtn:active::before {
+  width: 150%;
+  height: 150%;
+  opacity: 0;
+  transition: opacity 0.1s ease, width 0.3s ease-out, height 0.3s ease-out;
+}
+
+.logIn {
+  font-size: large;
+  margin-top: 2rem;
+  color: black;
+  padding: 10px;
+  width: fit-content;
+  border-radius: 6px;
+}
+
+.content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

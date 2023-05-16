@@ -1,19 +1,21 @@
 .back {
     background-image: url(../media/story-scenes/scene1.jpeg);
     background-size: cover;
-    height: 100vh;
+    background-position: center center;
+    min-height: 100vh;
 }
 
 .backdropBlur {
     backdrop-filter: blur(16px);
-    height: inherit;
+    min-height: inherit;
 }
 
 .game {
     background-image: linear-gradient(rgba(0, 0, 0, .4), transparent), url(../media/story-scenes/scene1.jpeg);
     background-size: cover;
+    background-position: center center;
     background-repeat: no-repeat;
-    height: inherit;
+    min-height: inherit;
     max-width: 1000px;
     width: 100%;
     margin: auto;

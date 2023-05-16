@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import styles from '../styles/Login.module.scss'
-// import {NavLink} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 function Signup() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -29,7 +29,9 @@ function Signup() {
 
   return (
     <div className={styles.login}>
-      <h2>Signup</h2>
+      <header className='page-header'>
+        <h1 className='heading'>Sign Up</h1>
+      </header>
       <form onSubmit={handleSignup}>
         <div>
           <label>Username:</label>
@@ -52,6 +54,7 @@ function Signup() {
           />
         </div>
         <button type="submit" className={styles.submit}>Signup</button>
+        <NavLink to="/login">Already have an account? Login</NavLink>
       </form>
     </div>
   );

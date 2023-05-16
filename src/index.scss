@@ -6,6 +6,13 @@
 
 body {
     font-family: sans-serif;
+    background-color: #000;
+    color: #eee;
+    background-image: url('./media/story-scenes/home3.jpeg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
 }
 
 .container {
@@ -21,11 +28,31 @@ body {
 }
 
 .page-header {
-    font-size: 2.8rem;
+    font-size: 2.4rem;
 
     .heading {
         text-align: center;
-        margin: 1rem 0;
+        margin-top: 2.2rem;
         line-height: 1.1;
+        color: #eee;
     }
+
+    @media screen and (max-width: 1000px) {
+        font-size: 4.5vw;
+    }
+
+    @media screen and (max-width: 700px) {
+        font-size: 6vw;
+    }
+}
+
+.logout-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    padding: 0.4rem 0.8rem;
+    margin: 0.5rem;
+    border-radius: 0.25rem;
+    line-height: 1;
 }

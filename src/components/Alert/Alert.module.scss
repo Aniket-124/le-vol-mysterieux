@@ -1,5 +1,5 @@
 .alert {
-    --nav-height: 4rem;
+    --nav-height: 2.2rem;
     --info-rgb: 233, 221, 255;
     --success-rgb: 194, 255, 240;
     --warning-rgb: 255, 235, 210;
@@ -12,7 +12,7 @@
     --bg: rgba(240, 240, 240, 0.6);
     --color: #444;
     position: fixed;
-    top: calc(var(--nav-height) + 1.2rem);
+    top: var(--nav-height);
     right: 0;
     min-width: 300px;
     max-width: calc(100% - 3.2rem);
